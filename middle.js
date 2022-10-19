@@ -32,8 +32,7 @@ const middle = function(array) {
     const indexB = indexA - 1;
     return [indexB, indexA];
   } else {
-    const index = Math.floor(array.length / 2);
-    return [index];
+    return [Math.floor(array.length / 2)];
   }
 };
 
