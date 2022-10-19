@@ -1,9 +1,9 @@
 // FUNCTION IMPLEMENTATION
-const assertEqual = function(actual, expected) {
-  if (actual === expected) {
-    console.log(`✅✅✅Assertion Passed: ${actual} === ${expected}`);
+const assertArraysEqual = function(arrayOne, arrayTwo) {
+  if (eqArrays(arrayOne, arrayTwo)) {
+    console.log("✅✅✅Assertion Passed: ", arrayOne, " === ", arrayTwo); // Do not use template literals, they cause arrays to display improperly.
   } else {
-    console.log(`🛑🛑🛑Assertion Failed: ${actual} !== ${expected}`);
+    console.log("🛑🛑🛑Assertion Failed: ", arrayOne, " !== ", arrayTwo); // Do not use template literals, they cause arrays to display improperly.
   }
 };
 
