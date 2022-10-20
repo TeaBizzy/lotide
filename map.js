@@ -21,7 +21,7 @@ const assertArraysEqual = function(arrayOne, arrayTwo) {
   }
 };
 
-
+// Modifies each element of an array using the callback function, returns the modified array.
 const map = function(array, callback) {
   const results = [];
   for (const value of array) {
@@ -35,6 +35,15 @@ const words = ["ground", "control", "to", "major", "tom"];
 const doubled = [2, 4, 6, 8];
 const remainerMod2 = [2, 10];
 
+const pythagoreanInputs = [
+  {x: 3, y: 4},
+  {x: 12, y: 5},
+  {x: 8, y: 15}
+];
+
+assertArraysEqual(map(pythagoreanInputs, value => Math.sqrt(Math.pow(value.x, 2) + Math.pow(value.y, 2))), [5, 13, 17]);
+
 assertArraysEqual(map(words, element => element + " Tom"), ["ground Tom", "control Tom", "to Tom", "major Tom", "tom Tom"]); // => true
 assertArraysEqual(map(doubled, element => element * 2), [4, 8, 12, 16]); // => true
 assertArraysEqual(map(remainerMod2, element => element % 2), [0, 0]); // => true
+
