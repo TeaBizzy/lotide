@@ -23,12 +23,12 @@ const assertArraysEqual = function(arrayOne, arrayTwo) {
 
 
 const map = function(array, callback) {
-  results = [];
+  const results = [];
   for (const value of array) {
     results.push(callback(value));
   }
   return results;
-}
+};
 
 // TEST CODE
 const words = ["ground", "control", "to", "major", "tom"];
