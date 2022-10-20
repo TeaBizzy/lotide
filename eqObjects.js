@@ -33,7 +33,9 @@ const eqObjects = function(objectA, objectB) {
   // Solve for matching keys AND values
   for (const key in objectA) {
     if (Array.isArray(objectA[key])) {
-      return eqArrays(objectA[key], objectB[key]);
+      if(eqArrays(objectA[key], objectB[key]) === false) {
+        return false;
+      }
     }
     if (!objectB[key] && objectA[key] !== objectB[key]) { // If the key exists in objB AND the value of the key in objA === the value of the same key in objB.
       return false;
