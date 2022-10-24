@@ -1,7 +1,7 @@
 const { expect } = require("chai");
 const eqObjects = require("../eqObjects");
 
-describe("#eqArrays()", () => {
+describe("#eqObjects()", () => {
   it("should return true for {a: 1, b: 2}, {a: 1, b: 2}", () => {
     const input = {a: 1, b: 2};
     
