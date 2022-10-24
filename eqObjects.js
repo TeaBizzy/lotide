@@ -33,7 +33,12 @@ const eqObjects = function(objectA, objectB) {
   // Solve for matching keys AND values
   for (const key in objectA) {
     if (Array.isArray(objectA[key])) {
-      if(eqArrays(objectA[key], objectB[key]) === false) {
+      if (eqArrays(objectA[key], objectB[key]) === false) {
+        return false;
+      }
+    }
+    if (typeof objectA[key] === "object" && !Array.isArray(objectA[key])) {
+      if (eqObjects(objectA[key], objectB[key]) === false) {
         return false;
       }
     }
@@ -41,7 +46,7 @@ const eqObjects = function(objectA, objectB) {
       return false;
     }
   }
-
+  console.log();
   return true;
 };
 
@@ -62,3 +67,10 @@ assertEqual(eqObjects(cd, dc), true); // => true
 
 const cd2 = { c: "1", d: ["2", 3, 4] };
 assertEqual(eqObjects(cd, cd2), false); // => false
+
+// Nest Objects
+assertEqual(eqObjects({ a: { z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }), true); // => true
+
+assertEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }), false); // => false
+assertEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: 1, b: 2 }), false); // => false
+
