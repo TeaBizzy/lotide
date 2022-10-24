@@ -1,4 +1,3 @@
-const assert = require("chai").assert;
 const { expect } = require("chai");
 const head = require("../head");
 
