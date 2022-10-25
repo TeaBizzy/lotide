@@ -1,7 +1,7 @@
 {
   "name": "@stefantalbot/lotide",
-  "version": "1.0.1",
-  "description": "",
+  "version": "1.0.2",
+  "description": "A clone of the Lodash library for learning purposes.",
   "main": "assertArraysEqual.js",
   "directories": {
     "test": "test"
@@ -13,7 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/TeaBizzy/lotide.git"
   },
-  "author": "",
+  "author": "Stefan Talbot",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/TeaBizzy/lotide/issues"
